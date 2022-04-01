@@ -4,14 +4,10 @@ import Index from './pages/Index';
 import {
     Route, Routes
 } from "react-router-dom";
-import Character from "./pages/Character";
-import Episode from "./pages/Episode";
-import Episodes from "./pages/Episodes";
-import Index_pages from "./pages/Index_pages";
 import * as PropTypes from "prop-types";
 import Header from "./Components/Shared/Header";
 import CharacterPage from "./pages/Character";
-
+import EpisodesPage from "./pages/Episodes";
 
 Routes.propTypes = {children: PropTypes.node};
 
@@ -22,11 +18,12 @@ class App extends Component {
             <>
                 <Header/>
                 <Routes>
-                    <Route path="/" element={<Index/>}/>
+                    <Route path="/" element={<div>Main</div>}/>
+                    <Route path="/characters" element={<Index/>}/>
                     <Route path="/character/:id" element={<CharacterPage/>}/>
-                    <Route path="/characters/:page" element={<Index_pages/>}/>
-                    <Route path="/episode/:id" element={<Episode/>}/>
-                    <Route path="/episodes" element={<Episodes/>}/>
+                    <Route path="/characters/:page" element={<Index/>}/>
+                    <Route path="/episodes" element={<EpisodesPage/>}/>
+                    <Route path="/episodes/:page" element={<EpisodesPage/>}/>
                     <Route path="*" element={<div>Not found</div>}/>
                 </Routes>
             </>

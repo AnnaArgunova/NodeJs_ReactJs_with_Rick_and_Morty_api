@@ -1,12 +1,11 @@
 import {useEffect, useState} from "react";
-import {useLocation} from "react-router-dom";
+import { useParams} from "react-router-dom";
+import Layout from "../Components/Shared/Layout";
 
 export default function Episode(){
 
     const [episode, setEpisode] = useState(null);
-    let location = useLocation();
-    const url = location.pathname.split('/')
-    const id = url.reverse()[0]
+    let {id} = useParams();
 
     useEffect(() => {
         fetch(`http://localhost:5000/episode/${id}`)
@@ -25,11 +24,11 @@ export default function Episode(){
     const month = date.getMonth()+1 >= 10 ? date.getMonth()+1 : `0${date.getMonth()+1}`
     const created = `${date.getDate()}.${month}.${date.getFullYear()}`
 
-    return <div>
+    return <Layout>
 
         <h1>{episode.name}</h1>
         <p>Episode: {episode.episode}</p>
         <p>Created: {created}</p>
         <p>Air date: {episode.air_date}</p>
-    </div>
+    </Layout>
 }

@@ -3,22 +3,24 @@ import CharacterItem from "../Components/Characters/CharacterItem";
 import {Title, Wrapper, WrapperCharacters} from "./Index.styled";
 import Pagination from "../Components/Shared/Pagination";
 import getCharacters from "../Fetch/getCharacters";
+import { useParams} from "react-router-dom";
+import Layout from "../Components/Shared/Layout";
 
 export default function Index() {
     const [data, setData] = useState(null);
     const [pagination, setPagination] = useState(null);
+    const {page} = useParams();
 
     useEffect(() => {
-        getCharacters().then(res=>{
-            setData(res.results)
-            setPagination(res.info)
+        getCharacters(page ? page : null).then(res=>{
+            setData(res.characters)
+            setPagination(res.pagination)
         });
     }, [])
 
     if (!data) return <div>Loading...</div>
-
     return (
-        <Wrapper>
+        <Layout>
             <Title>Rick and Morty</Title>
             <WrapperCharacters>
                 {data.map(item => {
@@ -26,7 +28,7 @@ export default function Index() {
                     }
                 )}
             </WrapperCharacters>
-            {pagination && <Pagination pages={pagination.pages} link={'/characters'}/>}
-        </Wrapper>
+            {pagination && <Pagination pagination={pagination}/>}
+        </Layout>
     );
 }

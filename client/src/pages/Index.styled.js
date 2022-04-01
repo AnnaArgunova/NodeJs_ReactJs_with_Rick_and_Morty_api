@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  padding: 0 30px;
-  margin-top: 130px;
-`;
-
 export const Title = styled.h1``;
 
 export const WrapperCharacters = styled.div`

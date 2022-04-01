@@ -1,13 +1,12 @@
 import {useEffect, useState} from "react";
-import { useLocation} from "react-router-dom";
+import { useParams} from "react-router-dom";
 import Character from "../Components/Character";
 import getCharacterId from "../Fetch/getCharacter_id";
+import Layout from "../Components/Shared/Layout";
 
 export default function CharacterPage() {
     const [character, setCharacter] = useState(null);
-    let location = useLocation();
-    const url = location.pathname.split('/')
-    const id = url.reverse()[0]
+    let {id} = useParams();
 
     useEffect(() => {
         getCharacterId(id).then(res=>{
@@ -16,6 +15,9 @@ export default function CharacterPage() {
     }, [])
 
     if (!character) return <div>Loading...</div>
-    console.log('character',character)
-    return <Character character = {character}/>
+    return (
+        <Layout>
+            <Character character = {character}/>
+        </Layout>
+    )
 }

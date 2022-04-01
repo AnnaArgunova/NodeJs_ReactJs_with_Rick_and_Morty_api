@@ -5,10 +5,10 @@ export default function Header() {
         <Wrapper>
             <Nav>
                 <Item>
-                    <a href={'/'}>Home</a>
+                    <a href={'/characters'}>Characters</a>
                 </Item>
                 <Item>
-                    <a href={'/episodes'}>Episode</a>
+                    <a href={'/episodes'}>Episodes</a>
                 </Item>
             </Nav>
         </Wrapper>

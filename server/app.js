@@ -10,7 +10,6 @@ const characterId = require("./routes/character_id");
 const episodeId = require("./routes/episode_id");
 const episodes = require("./routes/episode");
 const FileStore = require("./sessions/store");
-const characterPage = require("./routes/character_page");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -36,14 +35,12 @@ app.use(publicAuth);
 
 app.post('/login', Auth);
 
-app.get('/characters', characters);
+app.get('/characters(/:page)?', characters);
 
-app.get('/episodes', episodes);
-
-app.get('/character/:id', characterId);
-
-app.get('/characters/:page', characterPage);
+app.get('/episodes(/:page)?', episodes);
 
 app.get('/episode/:id', episodeId);
+
+app.get('/character/:id', characterId);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

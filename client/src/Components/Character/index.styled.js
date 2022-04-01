@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import {darkBlue} from "../../styles/color";
 
-export const Wrapper = styled.div`
-  margin-top: 150px;
-`;
+export const Wrapper = styled.div``;
 
 export const Flex = styled.div`
   display: flex;

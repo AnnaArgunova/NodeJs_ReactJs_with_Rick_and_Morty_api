@@ -1,6 +1,6 @@
 const fetch = require("node-fetch");
 const config = require("../config");
-const getCharacterById = require("../llib/getCharacter_id");
+const getCharacterById = require("../lib/getCharacter_id");
 
 const characterId = (req, res) => {
     fetch(`${config.api}/api/character/${req.params["id"]}`)

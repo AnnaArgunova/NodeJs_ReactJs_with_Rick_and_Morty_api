@@ -3,6 +3,11 @@
 # dependencies
 /client/node_modules
 /server/node_modules
+/server/sessions/tmp
+!/server/sessions/tmp/MOCK-TEST_SESSION.json
+!/server/sessions/tmp/MOCK-TEST_SESSION---------------.json
+!/server/sessions/tmp/MOCK-TEST_SESSION----2----------.json
+
 pnp.js
 
 # testing

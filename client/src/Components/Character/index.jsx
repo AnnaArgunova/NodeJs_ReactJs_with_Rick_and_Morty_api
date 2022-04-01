@@ -10,7 +10,7 @@ import {
 } from "./index.styled";
 
 export default function Character(props) {
-    const {character} = props
+    const {character} = props;
     return (
         <Wrapper>
             <Title>{character.name}</Title>
@@ -38,7 +38,8 @@ export default function Character(props) {
                 </div>
             </Flex>
 
-            <Episodes>{character.episode.length > 1 ? 'Episodes' : 'Episode'}: {character.episode.map(item => (
+            <Episodes>{character.episode.length > 1 ? 'Episodes' : 'Episode'}:
+                {character.episode.map(item => (
                 <ItemEpisode key={item.id}>
                     <ItemLink href={`/episode/${item.id}`}>
                         {item.name}

@@ -5,8 +5,8 @@ describe('Header', () => {
     test('Should rendering static', () => {
         render(<Header/>);
 
-        expect(screen.getByText('Home')).toBeInTheDocument();
-        expect(screen.getByText('Episode')).toBeInTheDocument();
+        expect(screen.getByText('Characters')).toBeInTheDocument();
+        expect(screen.getByText('Episodes')).toBeInTheDocument();
     });
 
     test('Should rendering list', () => {
