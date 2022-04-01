@@ -1,12 +1,12 @@
 import {useEffect, useState} from "react";
 import CharacterItem from "../Components/Characters/CharacterItem";
-import {Title, Wrapper, WrapperCharacters} from "./Index.styled";
+import {Title, Wrapper, WrapperCharacters} from "./Characters.styled";
 import Pagination from "../Components/Shared/Pagination";
 import getCharacters from "../Fetch/getCharacters";
 import { useParams} from "react-router-dom";
 import Layout from "../Components/Shared/Layout";
 
-export default function Index() {
+export default function Characters() {
     const [data, setData] = useState(null);
     const [pagination, setPagination] = useState(null);
     const {page} = useParams();
