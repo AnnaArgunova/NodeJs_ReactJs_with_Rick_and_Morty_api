@@ -1,5 +1,6 @@
 import {render, screen} from '@testing-library/react';
 import CharacterItem from "./CharacterItem";
+import React from "react";
 
 const character = {
     image: 'image',
@@ -17,7 +18,7 @@ describe('CharacterItem', ()=>{
     it('CharacterItem without character', ()=>{
         render(<CharacterItem/>);
 
-        expect(screen.queryByText('Character')).toBeNull();
+        expect(screen.queryByText('Loading...')).toBeInTheDocument();
     });
 
     it('Character image render', ()=>{

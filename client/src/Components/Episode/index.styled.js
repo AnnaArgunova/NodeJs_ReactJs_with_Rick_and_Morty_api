@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {darkBlue} from "../../styles/color";
+import {mobile} from "../../styles/breackpoints";
 
 export const Wrapper = styled.div``;
 
@@ -18,19 +19,28 @@ export const Item = styled.div`
   align-items: center;
 `;
 
-export const ItemTitle = styled.p``;
+export const ItemTitle = styled.p`
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 20px;
+`;
 
-export const ItemText = styled.p``;
+export const ItemText = styled.p`
+  font-size: 16px;
+`;
 
 export const CharactersWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 20px;
+
+
+  @media all and (max-width: ${mobile}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
-export const Characters = styled.div`
-
-`;
+export const Characters = styled.div``;
 
 export const CharactersName = styled.div`
   color: ${darkBlue};
@@ -40,24 +50,3 @@ export const CharactersName = styled.div`
   text-align: center;
   margin-bottom: 50px;
 `
-
-export const CharacterItem = styled.a`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  
-  border: solid 1px ${darkBlue};
-  border-radius: 3px;
-  
-  text-decoration: none;
-  color: ${darkBlue};
-`;
-
-export const CharacterTitle = styled.p``;
-
-export const CharacterImage = styled.img`
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-`;

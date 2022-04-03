@@ -1,20 +1,21 @@
 import {
-    Episodes, Flex,
+    Episodes, EpisodesTitle, Flex,
     Image,
     Item,
-    ItemEpisode, ItemLink,
+    ItemEpisode,
     ItemText,
     ItemTitle,
-    Title, TitleWrapper,
+    TitleWrapper,
     Wrapper
 } from "./index.styled";
+import EpisodeCard from "../Shared/EpisodeCard";
+import TitlePage from "../Shared/TitlePage";
 
 export default function Character(props) {
     const {character} = props;
     return (
         <Wrapper>
-            <Title>{character.name}</Title>
-
+            <TitlePage title={character.name}/>
             <Flex>
                 <TitleWrapper>
                     <Image src={character.image}
@@ -38,14 +39,13 @@ export default function Character(props) {
                 </div>
             </Flex>
 
-            <Episodes>{character.episode.length > 1 ? 'Episodes' : 'Episode'}:
-                {character.episode.map(item => (
-                <ItemEpisode key={item.id}>
-                    <ItemLink href={`/episode/${item.id}`}>
-                        {item.name}
-                    </ItemLink>
-                </ItemEpisode>
-            ))}
+            <TitlePage title = {`${character.episode.length > 1 ? 'Episodes' : 'Episode'}:`}/>
+            <Episodes>
+                {character.episode.map((item, index) => (
+                    <ItemEpisode key={index}>
+                        <EpisodeCard item={item}/>
+                    </ItemEpisode>
+                ))}
             </Episodes>
         </Wrapper>
     )

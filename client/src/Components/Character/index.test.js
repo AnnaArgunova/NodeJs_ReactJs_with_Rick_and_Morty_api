@@ -11,8 +11,6 @@ const character = {
 }
 
 describe('Character', () => {
-
-
     it('Should rendering props', () => {
         render(<Character character={character}/>);
 

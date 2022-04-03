@@ -17,7 +17,6 @@ describe('Header', () => {
 
     test('Should rendering link', () => {
         render(<Header/>);
-
         const links = screen.getAllByRole('link');
 
         expect(links.length).toBe(2);

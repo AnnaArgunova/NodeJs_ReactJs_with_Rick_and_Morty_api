@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {darkBlue} from "../../styles/color";
+import {mobile, tablet} from "../../styles/breackpoints";
 
 export const Wrapper = styled.div``;
 
@@ -14,18 +15,13 @@ export const TitleWrapper = styled.div`
 `;
 
 export const Image = styled.img`
-  height: auto;
+  height: 100%;
   width: 400px;
   object-fit: cover;
-`;
 
-export const Title = styled.p`
-  color: ${darkBlue};
-  font-weight: bold;
-  font-size: 20px;
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 50px;
+  @media all and (max-width: ${mobile}) {
+    width: 100%;
+  }
 `;
 
 export const Item = styled.div`
@@ -37,21 +33,30 @@ export const Item = styled.div`
 export const ItemTitle = styled.p`
   font-weight: bold;
   margin-right: 10px;
+  font-size: 20px;
 `;
 
 export const ItemText = styled.p`
-  font-size: 14px;
+  font-size: 16px;
 `;
 
-export const Episodes = styled.ul``;
+export const Episodes = styled.ul`
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  @media all and (max-width: ${tablet}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media all and (max-width: ${mobile}) {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+`;
 
 export const ItemEpisode = styled.li`
   list-style: none;
-`;
-
-export const ItemLink = styled.a`
-  text-decoration: none;
-  color: black;
-  margin: 10px 0;
+  width: 100%;
 `;
 

@@ -9,25 +9,31 @@ import {
     Title,
     Wrapper
 } from "./index.styled";
+import TitlePage from "../Shared/TitlePage";
+import CharacterCard from "../Shared/CharacterCard";
 
 export default function Episode(props) {
     const {episode} = props;
     return (
         <Wrapper>
-            <Title>{episode.name}</Title>
+            <TitlePage title={episode.name}/>
 
             <Item>
-                <ItemTitle>Episode</ItemTitle>
-                <ItemText>{episode.episode}</ItemText>
+                <ItemTitle>Season:</ItemTitle>
+                <ItemText>{episode.season}</ItemText>
+            </Item>
+            <Item>
+                <ItemTitle>Series:</ItemTitle>
+                <ItemText>{episode.series}</ItemText>
             </Item>
 
             <Item>
-                <ItemTitle>Created</ItemTitle>
+                <ItemTitle>Created:</ItemTitle>
                 <ItemText>{episode.created}</ItemText>
             </Item>
 
             <Item>
-                <ItemTitle>Air date</ItemTitle>
+                <ItemTitle>Air date:</ItemTitle>
                 <ItemText>{episode.air_date}</ItemText>
             </Item>
 
@@ -35,13 +41,7 @@ export default function Episode(props) {
                 <CharactersName>Characters:</CharactersName>
                 <CharactersWrapper>
                     {episode.characters.map(item => (
-                        <CharacterItem key={item.id} href={`/character/${item.id}`}>
-                            <CharacterTitle>{item.name}</CharacterTitle>
-                            <CharacterImage
-                                src={item.image}
-                                title={item.name}
-                                alt={item.name}/>
-                        </CharacterItem>
+                        <CharacterCard  key={item.id} item={item}/>
                     ))}
                 </CharactersWrapper>
             </Characters>
