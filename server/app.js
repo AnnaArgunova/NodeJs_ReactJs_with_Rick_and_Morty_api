@@ -10,6 +10,7 @@ const characterId = require("./routes/character_id");
 const episodeId = require("./routes/episode_id");
 const episodes = require("./routes/episode");
 const FileStore = require("./sessions/store");
+const index = require("./routes");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -34,6 +35,8 @@ app.use(session({
 app.use(publicAuth);
 
 app.post('/login', Auth);
+
+app.get('/index', index);
 
 app.get('/characters(/:page)?', characters);
 

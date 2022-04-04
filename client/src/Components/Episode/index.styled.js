@@ -4,15 +4,6 @@ import {mobile} from "../../styles/breackpoints";
 
 export const Wrapper = styled.div``;
 
-export const Title = styled.h1`
-  color: ${darkBlue};
-  font-weight: bold;
-  font-size: 20px;
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 50px;
-`;
-
 export const Item = styled.div`
   display: flex;
   justify-content: flex-start;

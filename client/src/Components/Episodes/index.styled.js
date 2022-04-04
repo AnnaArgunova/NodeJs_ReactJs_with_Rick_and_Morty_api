@@ -14,5 +14,3 @@ export const Wrapper = styled.div`
     justify-items: center;
   }
 `;
-
-export const Title = styled.h1``;

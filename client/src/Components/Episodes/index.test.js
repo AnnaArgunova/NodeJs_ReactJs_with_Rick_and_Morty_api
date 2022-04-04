@@ -20,6 +20,6 @@ describe('Episodes', ()=>{
     it('Should rendering title', ()=>{
         render(<Episodes episodes={episodes}/>);
 
-        expect(screen.getByText('Episodes')).toBeInTheDocument();
+        expect(screen.getByText('Rick and Morty episodes')).toBeInTheDocument();
     })
 })

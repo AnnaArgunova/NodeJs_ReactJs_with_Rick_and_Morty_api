@@ -31,7 +31,7 @@ describe('Characters', () => {
     it('Should rendering title', () => {
         render(<Characters data={data} pagination={pagination}/>);
 
-        expect(screen.getByText('Rick and Morty')).toBeInTheDocument();
+        expect(screen.getByText('Rick and Morty characters')).toBeInTheDocument();
     });
 
     it('Should rendering image', () => {

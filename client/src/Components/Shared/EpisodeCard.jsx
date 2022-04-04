@@ -4,7 +4,7 @@ export default function EpisodeCard(props){
     const {item} = props;
 
     return (
-        <Item href={`/episodes/${item.id}`}>
+        <Item href={`/episode/${item.id}`}>
             <Title>{item.name}</Title>
         </Item>
     )

@@ -6,7 +6,7 @@ export default function Episodes(props) {
     const {episodes} = props;
     return (
         <>
-            <TitlePage title={'Episodes'}/>
+            <TitlePage title={'Rick and Morty episodes'}/>
 
             <Wrapper>
                 {episodes.map(item => (

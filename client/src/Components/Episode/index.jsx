@@ -1,12 +1,8 @@
 import {
-    CharacterImage,
-    CharacterItem,
     Characters, CharactersName, CharactersWrapper,
-    CharacterTitle,
     Item,
     ItemText,
     ItemTitle,
-    Title,
     Wrapper
 } from "./index.styled";
 import TitlePage from "../Shared/TitlePage";

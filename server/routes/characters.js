@@ -1,7 +1,6 @@
 const fetch = require("node-fetch");
 const config = require("../config");
 const getCharacters = require("../lib/getCharacters");
-const {getPriority} = require("os");
 const getPagination = require("../lib/getPagination");
 
 const characters = (req, res) => {
@@ -12,7 +11,6 @@ const characters = (req, res) => {
         .then(data => {
             const characters = getCharacters(data.results);
             const pagination = getPagination(data.info, '/characters');
-            console.log({characters, pagination})
             res.send({express: {characters, pagination}});
         });
 };

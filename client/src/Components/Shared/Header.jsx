@@ -5,6 +5,9 @@ export default function Header() {
         <Wrapper>
             <Nav>
                 <Item>
+                    <a href={'/'}>Rick and Morty</a>
+                </Item>
+                <Item>
                     <a href={'/characters'}>Characters</a>
                 </Item>
                 <Item>

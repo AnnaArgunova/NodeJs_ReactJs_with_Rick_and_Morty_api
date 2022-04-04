@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import {mobile} from "../../styles/breackpoints";
 
-export const Title = styled.h1``;
-
 export const WrapperCharacters = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);

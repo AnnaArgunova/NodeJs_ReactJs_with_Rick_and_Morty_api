@@ -5,6 +5,7 @@ describe('Header', () => {
     test('Should rendering static', () => {
         render(<Header/>);
 
+        expect(screen.getByText('Rick and Morty')).toBeInTheDocument();
         expect(screen.getByText('Characters')).toBeInTheDocument();
         expect(screen.getByText('Episodes')).toBeInTheDocument();
     });
@@ -19,6 +20,6 @@ describe('Header', () => {
         render(<Header/>);
         const links = screen.getAllByRole('link');
 
-        expect(links.length).toBe(2);
+        expect(links.length).toBe(3);
     });
 });
