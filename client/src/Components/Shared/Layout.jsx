@@ -1,5 +1,6 @@
 import Header from "./Header";
 import {ChildrenWrapper, Wrapper} from "./Layout.styled";
+import Footer from "./Footer";
 
 export default function Layout(props) {
 
@@ -10,6 +11,7 @@ export default function Layout(props) {
             <ChildrenWrapper>
                 {children}
             </ChildrenWrapper>
+            <Footer/>
         </Wrapper>
     )
 }
